@@ -1,0 +1,41 @@
+#!/bin/sh
+##
+## (c) 2014 IT-Beratung Eckert, http://www.it-eckert.com/
+## ttime (for Xymon)
+##
+## An example Xymon extension to show
+##	- how to write an extension
+##	- a graphing example
+##	- how configuration can be done
+## 
+## This is similar to the `slab`-extension from the Xymon documentation but
+## usable on any *nix system.
+##
+## usage:
+##	- place in ext-dir of xymon (by default ttime-clientlaunch.cfg is configure to use /usr/lib/xymon/client/ext/)
+##	- place ttime-clientlaunch.cfg in your clientlaunch.d (or tasks.d if running on a xymon server)
+##
+## ChangeLog:
+## 2014-04-07 Tom	- initial version
+
+_log() {
+	local msg="$@"
+
+	echo "`date +"%Y-%m-%d %H:%M:%S"` $msg"
+}
+
+_log "ttime started"
+
+$XYMON $XYMSRV "status $MACHINE.ttime green `date`
+Tea time before 5pm, the 1st line of the status it important
+
+>>> graphing-data for ncv-module:
+epoch: `date +"%s"`
+hour: `date +"%H"`
+min: `date +"%M"`
+sec: `date +"%S"`
+"
+
+_log "ttime ended."
+
+exit 0
