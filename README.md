@@ -5,8 +5,8 @@ ttime for Xymon
 > and network monitor
 
 Author: Thomas Eckert <tom@it-eckert.de>  
-Site: http://www.it-eckert.com/software/ttime | http://github.com/XXX  
-Release post: http://www.it-eckert.com/blog/XXX  
+Project Page: http://www.it-eckert.com/software/ttime | https://github.com/tom-ee/xymon-ttime  
+Release post: http://www.it-eckert.com/blog/2014/an-example-xymon-extension-ttime
 Date: April 2014
 
 ## Why?
